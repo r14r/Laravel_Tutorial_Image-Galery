@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Galeria;
+use App\Models\Images;
 use Illuminate\Http\Request;
 
-class GaleriaController extends Controller {
+class ImagesController extends Controller {
 
     public function index() {
 
         // Pega os posts a partir do mais recente
 
-        $galeria = Galeria::orderBy('id', 'desc')->get();
-        return view('galeria.galeria', ['img' => $galeria]);
+        $images = Images::orderBy('id', 'desc')->get();
+        return view('images.images', ['img' => $images]);
     }
 
-    public function show(Galeria $img) {
-        return view('galeria.show', ['image' => $img]);
+    public function show(Images $img) {
+        return view('images.show', ['image' => $img]);
     }
 
     public function insert(Request $form) {
-        $galeria = new Galeria();
+        $images = new Images();
 
         $extensoes = [
             'png',
@@ -33,19 +33,19 @@ class GaleriaController extends Controller {
 
         // Checa se todos os campos foram preenchidos e se a extensão do arquivo é permitida
         // Se não passar em algum desses testes, volta para o formulário
-        // Se passar nos 2, a image é salva no banco e volta pra galeria
+        // Se passar nos 2, a image é salva no banco e volta pra images
 
         if (isset($form->description) && isset($form->title) && !empty($form->file('image'))) {
             if (in_array($form->file('image')->getClientOriginalExtension(), $extensoes)) {
-                $galeria->title = $form->title;
-                $galeria->description = $form->description;
-                $galeria->url = $form->file('image')->store('', 'images');;
+                $images->title = $form->title;
+                $images->description = $form->description;
+                $images->url = $form->file('image')->store('', 'images');;
 
-                $galeria->save();
+                $images->save();
 
-                return redirect()->route('galeria');
+                return redirect()->route('images');
             }
         }
-        return redirect()->route('galeria.inserir');
+        return redirect()->route('images.add');
     }
 }

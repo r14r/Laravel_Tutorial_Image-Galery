@@ -1,5 +1,5 @@
 ## Instruções
-Criar database "galeriaphp"
+Criar database "imagesphp"
 
 ## Comandos
 ***php artisan serve***

@@ -5,14 +5,14 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGaleriasTable extends Migration {
+class CreateGaleryTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create('galery', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('description');
@@ -34,10 +34,12 @@ class CreateGaleriasTable extends Migration {
             'yxSZGlo7iilaZ3kY9tqeXERhBbDHgF9ETJP9mWjb.jpg'
         ];
 
+        $loop = 0;
         foreach( $images as $image) {
-            DB::table('galery')->insert(
+            $loop += 1;
+            DB::table('images')->insert(
                 array(
-                    'title' => "$image", 'description' => "$image", 'url' => "$image"
+                    'title' => "$loop", 'description' => "$loop", 'url' => "$image"
                 )
            );
         }

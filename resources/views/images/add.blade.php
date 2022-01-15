@@ -1,7 +1,7 @@
 @extends('templates.base')
 
 @section('title')
-<title>Inserir | Trabalho</title>
+<title>Add | Trabalho</title>
 @endsection
 @section('conteudo')
 
@@ -16,7 +16,7 @@
 <div class="container py-5">
     <h1 style='text-align:center'>Lorem Ipsum</h1>
     <div class="row">
-        <form action="{{ route('galeria.insert') }}" method='post' enctype="multipart/form-data" style='max-width:500px; margin:auto;'>
+        <form action="{{ route('images.insert') }}" method='post' enctype="multipart/form-data" style='max-width:500px; margin:auto;'>
             @csrf
             <div class="form-group">
                 <label for="title">Título</label>

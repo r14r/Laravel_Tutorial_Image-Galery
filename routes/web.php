@@ -1,21 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\ImagesController;
 
 Route::get('/', function () {
     return view('home.home');
 })->name('home');
 
-Route::get('galeria', [GaleriaController::class, 'index'])->name('galeria');
+Route::get('images', [ImagesController::class, 'index'])->name('images');
 
-Route::prefix('galeria')->group(function () {
+Route::prefix('images')->group(function () {
 
-    Route::get('/inserir', function () {
-        return view('galeria.inserir');
-    })->name('galeria.inserir');
+    Route::get('/add', function () {
+        return view('images.add');
+    })->name('images.add');
 
-    Route::post('/inserir', [GaleriaController::class, 'insert'])->name('galeria.insert');
+    Route::post('/add', [ImagesController::class, 'insert'])->name('images.insert');
 
-    Route::get('/{img}', [GaleriaController::class, 'show'])->name('galeria.show');
+    Route::get('/{img}', [ImagesController::class, 'show'])->name('images.show');
 });

@@ -86,7 +86,7 @@
 
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="{{ route('galeria') }}" class="nav-link text-uppercase font-weight-bold">Galeria</a></li>
+                        <li class="nav-item"><a href="{{ route('images') }}" class="nav-link text-uppercase font-weight-bold">Images</a></li>
                     </ul>
                 </div>
             </div>

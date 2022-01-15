@@ -1,7 +1,7 @@
 @extends('templates.base')
 
 @section('title')
-<title>Galeria | Trabalho</title>
+<title>Images | Trabalho</title>
 @endsection
 @section('conteudo')
 
@@ -70,10 +70,10 @@
 </style>
 <div style="background: url(https://jooinn.com/images/urban-1.jpg)" class="jumbotron bg-cover text-white">
     <div class="container py-5 text-center">
-        <h1 class="display-4 font-weight-bold">Galeria</h1>
+        <h1 class="display-4 font-weight-bold">Images</h1>
         <p class="font-italic mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p class="font-italic mb-4">Suspendisse pulvinar bibendum magna, at facilisis velit mollis ut.</p>
-        <a href="{{ route('galeria.inserir') }}" class='btn btn-primary' style='width:100px'>Adicionar</a>
+        <a href="{{ route('images.add') }}" class='btn btn-primary' style='width:100px'>Adicionar</a>
     </div>
 </div>
 <div class="container py-5">
@@ -86,7 +86,7 @@
         @isset($img)
         @foreach($img as $i)
         <div class='imgItem'>
-            <a href="{{ route('galeria.show', $i) }}" class='linkImg' style=>
+            <a href="{{ route('images.show', $i) }}" class='linkImg' style=>
                 <div class='description'>
                     <p>
                         <b>{{$i->title}}</b> |
