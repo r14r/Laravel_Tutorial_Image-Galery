@@ -1,6 +1,6 @@
 @extends('templates.base')
 
-@section('titulo')
+@section('title')
 <title>Galeria | Trabalho</title>
 @endsection
 @section('conteudo')
@@ -29,7 +29,7 @@
         object-fit: cover;
     }
 
-    .descricao {
+    .description {
         padding: 15px;
     }
 
@@ -87,15 +87,15 @@
         @foreach($img as $i)
         <div class='imgItem'>
             <a href="{{ route('galeria.show', $i) }}" class='linkImg' style=>
-                <div class='descricao'>
+                <div class='description'>
                     <p>
-                        <b>{{$i->titulo}}</b> |
+                        <b>{{$i->title}}</b> |
                         <!-- Limita o número de caracteres mostrados na descrição -->
                         <!-- Se for maior que 60, ele corta até os 60 caracteres e adiciona reticências -->
                         <!-- Senão, retorna a descrição normal -->
                         @php
-                        $i->descricao = (strlen($i->descricao) > 60) ? substr($i->descricao, 0, 60) . '...' : $i->descricao;
-                        echo($i->descricao)
+                        $i->description = (strlen($i->description) > 60) ? substr($i->description, 0, 60) . '...' : $i->description;
+                        echo($i->description)
                         @endphp
                     </p>
                 </div>

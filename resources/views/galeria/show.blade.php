@@ -1,12 +1,12 @@
 @extends('templates.base')
 
-@isset($imagem)
-@section('titulo')
-<title>{{$imagem->titulo}} | Trabalho</title>
+@isset($image)
+@section('title')
+<title>{{$image->title}} | Trabalho</title>
 @endsection
 @else
-@section('titulo')
-<title>Imagem | Trabalho</title>
+@section('title')
+<title>Image | Trabalho</title>
 @endsection
 @endisset
 @section('conteudo')
@@ -33,7 +33,7 @@
         margin: auto;
     }
 
-    .descricao {
+    .description {
         padding: 15px;
         width: 30vw;
     }
@@ -67,17 +67,17 @@
 <div class="container mt-4 py-5">
     <div class='row'>
 
-        <!-- Checa se a imagem foi definida -->
-        <!-- Se for, vai mostrar os dados da imagem -->
+        <!-- Checa se a image foi definida -->
+        <!-- Se for, vai mostrar os dados da image -->
         <!-- Senão, vai mostrar um aviso -->
 
-        @isset($imagem)
+        @isset($image)
         <div class='imgItem'>
-            <img loading=lazy src="{{ '/img/' . $imagem->url }}" class='imgzinha' />
+            <img loading=lazy src="{{ '/img/' . $image->url }}" class='imgzinha' />
         </div>
-        <div class='descricao'>
-            <h1 class='display-4'>{{$imagem->titulo}}</h1>
-            <p>{{$imagem->descricao}}</p>
+        <div class='description'>
+            <h1 class='display-4'>{{$image->title}}</h1>
+            <p>{{$image->description}}</p>
         </div>
         @else
         <h4 style='color:#a5c6f6; text-align:center'>Nenhum Resultado Encontrado!</h4>

@@ -1,6 +1,6 @@
 @extends('templates.base')
 
-@section('titulo')
+@section('title')
 <title>Home | Trabalho</title>
 @endsection
 @section('conteudo')

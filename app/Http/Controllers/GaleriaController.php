@@ -16,7 +16,7 @@ class GaleriaController extends Controller {
     }
 
     public function show(Galeria $img) {
-        return view('galeria.show', ['imagem' => $img]);
+        return view('galeria.show', ['image' => $img]);
     }
 
     public function insert(Request $form) {
@@ -33,13 +33,13 @@ class GaleriaController extends Controller {
 
         // Checa se todos os campos foram preenchidos e se a extensão do arquivo é permitida
         // Se não passar em algum desses testes, volta para o formulário
-        // Se passar nos 2, a imagem é salva no banco e volta pra galeria
+        // Se passar nos 2, a image é salva no banco e volta pra galeria
 
-        if (isset($form->descricao) && isset($form->titulo) && !empty($form->file('imagem'))) {
-            if (in_array($form->file('imagem')->getClientOriginalExtension(), $extensoes)) {
-                $galeria->titulo = $form->titulo;
-                $galeria->descricao = $form->descricao;
-                $galeria->url = $form->file('imagem')->store('', 'images');;
+        if (isset($form->description) && isset($form->title) && !empty($form->file('image'))) {
+            if (in_array($form->file('image')->getClientOriginalExtension(), $extensoes)) {
+                $galeria->title = $form->title;
+                $galeria->description = $form->description;
+                $galeria->url = $form->file('image')->store('', 'images');;
 
                 $galeria->save();
 

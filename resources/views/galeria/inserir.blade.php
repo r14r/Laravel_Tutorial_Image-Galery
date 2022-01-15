@@ -1,6 +1,6 @@
 @extends('templates.base')
 
-@section('titulo')
+@section('title')
 <title>Inserir | Trabalho</title>
 @endsection
 @section('conteudo')
@@ -19,17 +19,17 @@
         <form action="{{ route('galeria.insert') }}" method='post' enctype="multipart/form-data" style='max-width:500px; margin:auto;'>
             @csrf
             <div class="form-group">
-                <label for="titulo">Título</label>
-                <input required name='titulo' type="text" class="form-control" id="titulo" aria-describedby="tituloHelp" placeholder="Insira o título da Imagem">
-                <small id="tituloHelp" class="form-text text-muted">Dê um nome bonito à sua imagem. Todo mundo vai ver :)</small>
+                <label for="title">Título</label>
+                <input required name='title' type="text" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Insira o título da Image">
+                <small id="titleHelp" class="form-text text-muted">Dê um nome bonito à sua image. Todo mundo vai ver :)</small>
             </div>
             <div class="form-group">
-                <label for="descricao">Descrição</label>
-                <input required name='descricao' type="text" class="form-control" id="descricao" placeholder="Insira a descrição da Imagem">
+                <label for="description">Descrição</label>
+                <input required name='description' type="text" class="form-control" id="description" placeholder="Insira a descrição da Image">
             </div>
             <div class="form-group">
-                <label for="imagem">Imagem</label>
-                <input required name='imagem' type="file" class="form-control" id="imagem">
+                <label for="image">Image</label>
+                <input required name='image' type="file" class="form-control" id="image">
             </div>
             <div class="form-group">
                 <input type='submit' class='btn btn-primary' />
